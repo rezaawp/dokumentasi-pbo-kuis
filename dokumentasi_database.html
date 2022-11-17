@@ -24,10 +24,7 @@
                     let result = '';
 
                     isi.map((data, index) => {
-                        if(isi === '')
-                        {
-                            return false;
-                        };
+                        isi == '' && false;
                         result += `${++index} . <p>${data.nama} | ${data.tipe}</p>`
                     })
 
