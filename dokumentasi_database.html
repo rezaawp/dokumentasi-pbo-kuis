@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi Database Database</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+<body>
+    <h4 class="text-center mt-2">Nama field nya bisa cek langsung di phpmyadmin</h4>
+    <div class="container mt-3">
+        <table border="1" class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Nama Tabel</th>
+                <th>Keterangan</th>
+                <th>Field</th>
+            </tr>
+            </thead>
+            <script>
+                let field = (isi) => {
+                    let result = '';
+
+                    isi.map((data, index) => {
+                        if(isi === '')
+                        {
+                            return false;
+                        };
+                        result += `${++index} . <p>${data.nama} | ${data.tipe}</p>`
+                    })
+
+                    return result
+                }
+
+                const dokumentasi = [
+                    {
+                        tabel: 'penjawabs',
+                        keterangan: 'digunakan untuk seluruh users yang sudah mengerjakan kuis dan akan digunakan sebagai validasi ketika users sudah pernah mengerjakan',
+                        isi: ['kontol', 'asdkas'],
+                        field: field([{
+                            nama: 'id',
+                            tipe: 'int(20) unsigned'
+                        }, {
+                            nama: 'user_id',
+                            tipe: 'int(11)'
+                        }])
+                    },
+                    {
+                        tabel: 'count_downs',
+                        keterangan: 'sebagai tempat penyimpanan data waktu ketika user sudah mengklik kerjakan dan juga digunakan untuk validasi hitung mundur ketika website nya di refresh.. ',
+                        field: '<p>hai 1</p> <p>hai 2</p>'
+
+                    },
+                    {
+                        tabel: 'jurusans',
+                        keterangan: 'menampung nama jurusan.. ini akan berelasi dengan tabel users',
+                        field: '<p>hai 1</p> <p>hai 2</p>'
+                    },
+                    {
+                        tabel: 'list_soal',
+                        keterangan: 'menampung token soal yang pernah dibuat (token nya bersifat unique).. ini akan berelasi dengan tabelm soals. tabel soal diibaratkan sebagai detail soal yang menampung soal, jawabanm dan token soal',
+                        field: '<p>hai 1</p> <p>hai 2</p>'
+                    },
+                    {
+                        tabel: 'jawaban_users',
+                        keterangan: 'menampung seluruh semua jawaban users (jawaban yang salah pun akan ditampung di tabel ini). ini akan berelasi dengan tabel list_soals',
+                        field: '<p>hai 1</p> <p>hai 2</p>'
+                    },
+                    {
+                        tabel: 'cek_penjawabs',
+                        keterangan: 'tabel ini merupakan kesalahan skenario ketika proses pembuatan. jadi tabel ini nantika akan dihapus',
+                        field: '<p>hai 1</p> <p>hai 2</p>'
+                    },
+                    {
+                        tabel: 'soals',
+                        keterangan: 'menampung soal dan jawaban',
+                        field: '<p>hai 1</p> <p>hai 2</p>'
+                    },
+                    {
+                        tabel: 'gurus',
+                        keterangan: 'tabel ini masih dalam tahap percobaan dan tidak dapat dipastikan bahwa tabel ini adalah sebagai identitas dari guru. jadi lebih baik jangan dimasukan ke dalam database design',
+                        field: '<p>hai 1</p> <p>hai 2</p>'
+                    },
+                    {
+                        tabel: 'mata_pelajarans',
+                        keterangan: 'menampung mata pelajaran. ini akan berlasi dengan tabel list_soals',
+                        field: '<p>hai 1</p> <p>hai 2</p>'
+                    },
+                    {
+                        tabel: 'users',
+                        keterangan: 'menampung users siswa dan guru. tabel ini yang nantinya akan dijadikan sebagai hak akses dari sebuah website. ini akan berelasi dengan tabel list_soals, tabel mata_pelajarans, tabel gurus',
+                        field: '<p>hai 1</p> <p>hai 2</p>'
+                    }
+                ]
+                const tbd = document.getElementById('tbody');
+
+                console.log(dokumentasi[0])
+
+                dokumentasi.map((data) => {
+                    document.write(`<tbody><tr><td>${data.tabel}</td><td>${data.keterangan}</td><td>${data.field}</td></tr></tbody>`)
+                })
+            </script>
+        </table>
+    </div>
+</body>
+</html>
