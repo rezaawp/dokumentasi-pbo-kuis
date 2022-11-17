@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container mt-3">
+    <table border="1" class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Halaman</th>
+          <th>Path</th>
+          <th>Method</th>
+          <th>View</th>
+          <th>Keterangan Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pengerjaan Soal</td>
+          <td>
+            <a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/routes/web.php#L124">/kuis/kuis/task/{token_soal}</a>
+          </td>
+          <td>GET</td>
+          <td>
+            <a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/resources/views/kuis/soal.blade.php">Ke Halaman</a>
+          </td>
+          <td>Akan Menampilkan Soal (Sesuai Token)</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>Hasil Pengerjaan (Mengembalikan Halaman Nilai)</td>
+          <td>
+            <a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/routes/web.php#L133">/submit-soal/{total_soal}/{token}</a>
+          </td>
+          <td>POST</td>
+          <td>
+            <a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/resources/views/kuis/nilai.blade.php">Ke Halaman</a>
+          </td>
+          <td>Tampil Ketika Klik Tombol Submit</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>Login Users</td>
+          <td>
+            <a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/routes/web.php#L133">/submit-soal/{total_soal}/{token}</a>
+          </td>
+          <td>GET</td>
+          <td>
+            <a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/resources/views/kuis/login/login.blade.php">Ke Halaman</a>
+          </td>
+          <td> Tampil Ketika User Belum Login, Ketika User Sudah Login Tidak Ditampilkan </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>Sudah melewati batas waktu Pengerjaan</td>
+          <td>
+            <a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/routes/web.php#L133">/submit-soal/{total_soal}/{token}</a>
+          </td>
+          <td>GET</td>
+          <td>
+            <a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/resources/views/kuis/melewati_batas_waktu.blade.php">Ke Halaman</a>
+          </td>
+          <td> Logic : <a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/app/Http/Controllers/KuisController.php#L137">KuisController</a> . Halaman akan ditampilkan jika menggunakan fitur batas waktu rentan tanggal </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>Belum Waktunya Mengerjakan</td>
+          <td>
+            <a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/routes/web.php#L133">/submit-soal/{total_soal}/{token}</a>
+          </td>
+          <td>GET</td>
+          <td>
+            <a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/resources/views/kuis/belum_waktunya_mengerjakan.blade.php">Ke Halaman</a>
+          </td>
+          <td> Logic : <a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/app/Http/Controllers/KuisController.php#L137">KuisController</a> . Halaman akan ditampilkan jika menggunakan fitur batas waktu rentan tanggal </td>
+        </tr>
+      </tbody>
+
+      <tbody>
+          <tr>
+              <td>Login Guru</td>
+              <td>
+                  <a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/routes/web.php#L47">/kuis/guru/login</a>
+              </td>
+              <td>GET</td>
+              <td>
+                <a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/resources/views/kuis/admin/login/login.blade.php">Ke Halmaan</a>
+              </td>
+              <td>
+                Front End Dibuat oleh ryan
+              </td>
+          </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>Dashboard Guru</td>
+          <td><a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/routes/web.php#L105">/kuis/guru</a></td>
+          <td>GET</td>
+          <td><a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/resources/views/kuis/admin/dashboard.blade.php">Ke Halaman</a></td>
+          <td>Tidak akan bisa di akses jika login sebagai siswa</td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>Membuat Soal</td>
+          <td><a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/routes/web.php#L130">/kus/buat-soal</a></td>
+          <td>GET</td>
+          <td><a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/resources/views/kuis/admin/buat_soal.blade.php">Ke Halaman</a></td>
+          <td>-</td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>Membuat Soal Pilihan Ganda</td>
+          <td><a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/routes/web.php#L126">/kuis/buat-soal/pilihan-ganda</a></td>
+          <td>GET</td>
+          <td><a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/resources/views/kuis/buat_soal.blade.php">Ke Halaman</a></td>
+          <td>Untuk value name dari tag text area, harus sama persis ya :D</td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>Membuat Soal Tertulis</td>
+          <td><a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/routes/web.php#L127">/kuis/buat-soal/tertulis</a></td>
+          <td>GET</td>
+          <td><a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/resources/views/kuis/admin/buat_soal_tertulis.blade.php">Ke Halaman</a></td>
+          <td>Untuk atribut name dan value harus sama persis ya :D </td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>Mata Pelajaran (Guru)</td>
+          <td><a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/routes/web.php#L81">/kuis/guru/mata-pelajaran</a></td>
+          <td>GET</td>
+          <td><a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/resources/views/kuis/admin/mapel.blade.php">Ke Halaman</a></td>
+          <td>Silahkan diperhatikan variabel varibel nya.</td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>Daftar Kelas</td>
+          <td><a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/routes/web.php#L106">/kuis/guru/daftar-kelas</a></td>
+          <td>GET</td>
+          <td><a href="https://github.com/rezaawp/pbo-revisi-kuis/blob/reza/resources/views/kuis/admin/e-monitoring/daftar_kelas.blade.php">Ke Halaman</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
+
